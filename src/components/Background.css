@@ -1,0 +1,60 @@
+/* Background.css */
+
+.bg-root {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, var(--bg-darkest) 0%, var(--bg-dark) 100%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Subtle tech grid mesh */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(74, 92, 106, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 92, 106, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, #000 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, #000 40%, transparent 80%);
+  opacity: 0.8;
+}
+
+/* Primary top ambient glow (replaces the harsh blobs) */
+.bg-ambient-top {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 92, 106, 0.22) 0%, rgba(37, 55, 69, 0.12) 45%, transparent 70%);
+  filter: blur(60px);
+}
+
+/* Subtle secondary bottom-corner glow */
+.bg-ambient-bottom {
+  position: absolute;
+  bottom: -100px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 92, 106, 0.15) 0%, transparent 65%);
+  filter: blur(70px);
+  animation: floatAmbient 16s ease-in-out infinite alternate;
+}
+
+@keyframes floatAmbient {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-30px, -40px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-ambient-bottom {
+    animation: none;
+  }
+}

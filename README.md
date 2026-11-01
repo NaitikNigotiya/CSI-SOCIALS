@@ -1,18 +1,23 @@
-# CSI Socials 🚀
+# CSI Bennett – Link-in-Bio 🚀
 
-A modern, responsive landing page for the CSI Social community.
+A modern, responsive link-in-bio landing page for the **Computer Society of India (CSI), Bennett University Student Chapter**.
 
 ## 🌟 Features
-- Sleek dark theme with ambient glow orbs and subtle glassmorphic styling
-- Responsive design across mobile, tablet, and desktop devices
-- Google Fonts (`Plus Jakarta Sans`) typography
-- Interactive CTA capture form and feature cards
-- Pure HTML5 and CSS with zero external library dependencies
+- Sleek slate-blue glassmorphic cards with subtle ambient glow
+- Responsive single-column layout (mobile-first, max-width 480px)
+- Staggered entrance animation with `prefers-reduced-motion` support
+- All editable content centralized in `src/data/links.js`
+- Built with React + Vite and zero external UI/icon libraries (inline SVG only)
 
-## 🛠️ Getting Started
-Simply clone the repository and open `index.html` in your browser:
+## 🛠️ Development
+
 ```bash
-git clone https://github.com/NaitikNigotiya/CSI-SOCIALS.git
-cd CSI-SOCIALS
-# Open index.html in your preferred browser
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
 ```

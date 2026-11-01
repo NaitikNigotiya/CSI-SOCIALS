@@ -1,0 +1,89 @@
+/* ─────────────────────────────────────────────────────────────
+   index.css – global reset, palette, typography, shared utilities
+   ───────────────────────────────────────────────────────────── */
+
+/* ── Palette ─────────────────────────────────────────────────── */
+:root {
+  --bg-darkest:  #06141B;
+  --bg-dark:     #11212D;
+  --card:        #253745;
+  --border:      #4A5C6A;
+  --text-muted:  #9BA8AB;
+  --text-light:  #CCD0CF;
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-light);
+  background: var(--bg-darkest);   /* instant paint before gradient renders */
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ── Shared glass surface ─────────────────────────────────────── */
+.glass {
+  background-color: rgba(37, 55, 69, 0.35);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(204, 208, 207, 0.10);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass {
+    background-color: rgba(17, 33, 45, 0.9);
+  }
+}
+
+/* ── Fade-up entrance animation ──────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeUp 0.45s ease both;
+}
+
+/* No animation when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-in {
+    animation: none;
+  }
+}
+
